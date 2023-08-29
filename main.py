@@ -23,5 +23,24 @@ morse_code = {"A": ".-", "B": "-...", "C": "-.-.", "D": "-..", "E": ".", "F": ".
               }
 
 
+continue_converting = True
 
+while continue_converting:
 
+    print(title)
+    text_to_convert = input("Type the text you want to convert into morse code: ").upper()
+
+    converted_text = []
+    for letter in text_to_convert:
+        converted_text.append(morse_code[letter])
+
+    morse_code_text = " ".join(converted_text)
+
+    print(f"Your text input was: {text_to_convert}, your morse code output is: {morse_code_text}")
+
+    quit_converter = input("Do you want to quit the converter? If so, type 'Y', otherwise type 'N': ").upper()
+
+    if quit_converter == "Y":
+        continue_converting = False
+
+    clear()
